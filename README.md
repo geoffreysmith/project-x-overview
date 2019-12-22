@@ -84,7 +84,7 @@ With the attached simple docker-compose.yaml you'll have a complete site setup, 
 
 On the catalog itself there's a dropdown that lets the user select what template they want to use for categories and products (we will not be using things like product variants or bundles).
 
-##Dynamics/AX7
+## Dynamics/AX7
 
 Sitecore delivered a series of plugins to integrate into Dynamics AX7. They included the following to install:
 
