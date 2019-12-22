@@ -26,21 +26,23 @@ This is process is all documented in the dev-ops repository I setup, not really 
 
 **Server (And Base Build)**
 
-| Sitecore 9.1       | 
-| Server             | Shared Config  | Separate Code  | Custom Code?    | Explanation
-| -------------------|----------------------------------------------------------------------
-| xc-cm              | N (CM/CD)      | Shared (CM/CD) | Shared (CM/CD)  | Authoring environment      
-| xc-cd              | N (CM/CD)      | Shared (CM/CD) | Shared (CM/CD)  | Delivery environment
-| xconnect           | N              | N              | N               | No idea what this does but it requires separate environment configs
-| solr               | N/A            | N/A            | N/A             |
-| mssql              | N/A            | N/A            | N/A             |
-| identity server    | N              | Y              | Y               | IdentityServer4 this is broken OOTB
-| xc-plumber         | N              | N              | N               | Commerce debugging site
-| xc-authoring       | N              | Y              | Y               | Where users and plugins edit commerce "entities" that go to Sitecore
-| xc-shops           | N              | N              | Y               | Where users create shops (we just have one)
-| xc-ops             | N              | Y              | Y               | Backplane that ties all the commerce servers together
-| xc-minions         | N              | Y              | Y               | A daemon to run jobs like "update inventory"
-| xc-identity server | NO IDEA        | NO IDEA        | NO IDEA         | 99% sure this proxies dotcore objects to dotframework objects
+[//]: # "start: current build XM0"
+ 
+ ***Sitecore 9.1 XC XP0**
+| Server             | Shared Config  | Separate Code  | Custom Code?    | Explanation															 |
+| -------------------|----------------|----------------|-----------------|-----------------------------------------------------------------------|
+| xc-cm              | N (CM/CD)      | Shared (CM/CD) | Shared (CM/CD)  | Authoring environment      											 |
+| xc-cd              | N (CM/CD)      | Shared (CM/CD) | Shared (CM/CD)  | Delivery environments                                                 |
+| xconnect           | N              | N              | N               | No idea what this does but it requires separate environment configs   |
+| solr               | N/A            | N/A            | N/A             |																		 |
+| mssql              | N/A            | N/A            | N/A             |                                                                       |
+| identity server    | N              | Y              | Y               | IdentityServer4 this is broken OOTB                                   |
+| xc-plumber         | N              | N              | N               | Commerce debugging site                                               |
+| xc-authoring       | N              | Y              | Y               | Where users and plugins edit commerce "entities" that go to Sitecore  |
+| xc-shops           | N              | N              | Y               | Where users create shops (we just have one)                           |
+| xc-ops             | N              | Y              | Y               | Backplane that ties all the commerce servers together                 |
+| xc-minions         | N              | Y              | Y               | A daemon to run jobs like "update inventory"                          |
+| xc-identity server | NO IDEA        | NO IDEA        | NO IDEA         | 99% sure this proxies dotcore objects to dotframework objects         |
 
 1. Terminology: this is actually really important because documentation from Sitecore themselves gets it messed up which is why I tried to hopefully explain it in a more meaningful way. Go ahead, go to Sitecore's site and try to figure it out. CM/CD are the authoring node and the delivery node. Only difference is configs same code base. I am not currently building CD but when I do it'll just be a multi-stage build where you have a base layer add the code and then a stage for CM pulling in CM transforms and CD pulling in CD transforms. Right now since i can see the site in CM and the only difference between CM and CD is that CD doesn't let you have authoring, I just use CM in development. This is technically known as "XM" which for whatever reason means standalone. It is important to know when you search or read documentation and you're like "what's XM" and Sitecore themselves aren't consistent.
 
