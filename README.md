@@ -13,7 +13,7 @@
 
 ##ACR URI
 
-This is process is all documented in the dev-ops repository I setup, not really relevant but there were a lot of things that went into it and I basically used bash history to document it end to end.
+This is process is all documented in the dev-ops repository, not really relevant but there were a lot of things that went into it and I basically used bash history to document it end to end.
 
 1. Setup a a custom Azure build server (Self Hosted Build Agent)[SELF-HOSTED-AGENT.MD], this is in its own repository. Basic documentation with passwords omitted. This is because the build exceeds the the standard Azure build server (with no-cache enabled on docker). It is about three hours for a build to work.
 2. This requires a service connection between Azure Build Pipelimes and ACR, this is documented in my repo, but it just works. It runs off a service principal.
