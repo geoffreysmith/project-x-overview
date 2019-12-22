@@ -26,9 +26,9 @@ This is process is all documented in the dev-ops repository I setup, not really 
 
 **Server (And Base Build)**
 
-[//]: # "start: current build XM0"
- 
- ***Sitecore 9.1 XC XP0**
+ ***Sitecore 9.1 XC XP0***
+ [//]: # "start: current build XM0"
+
 | Server             | Shared Config  | Separate Code  | Custom Code?    | Explanation															 |
 | -------------------|----------------|----------------|-----------------|-----------------------------------------------------------------------|
 | xc-cm              | N (CM/CD)      | Shared (CM/CD) | Shared (CM/CD)  | Authoring environment      											 |
