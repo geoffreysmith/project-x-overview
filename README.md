@@ -22,7 +22,7 @@ This is process is all documented in the dev-ops repository I setup, not really 
 
 **Sitecore**
 
-1. For some reason you need to put the word Sitecore everywhere, so I just went with it.
+> For some reason you need to put the word Sitecore everywhere, so I just went with it.
 
 **Server (And Base Build)**
 
@@ -43,7 +43,7 @@ This is process is all documented in the dev-ops repository I setup, not really 
 | xc-minions         | N              | Y              | Y               | A daemon to run jobs like "update inventory"                          |
 | xc-identity server | NO IDEA        | NO IDEA        | NO IDEA         | 99% sure this proxies dotcore objects to dotframework objects         |
 
-1. Terminology: this is actually really important because documentation from Sitecore themselves gets it messed up which is why I tried to hopefully explain it in a more meaningful way. Go ahead, go to Sitecore's site and try to figure it out. CM/CD are the authoring node and the delivery node. Only difference is configs same code base. I am not currently building CD but when I do it'll just be a multi-stage build where you have a base layer add the code and then a stage for CM pulling in CM transforms and CD pulling in CD transforms. Right now since i can see the site in CM and the only difference between CM and CD is that CD doesn't let you have authoring, I just use CM in development. This is technically known as "XM" which for whatever reason means standalone. It is important to know when you search or read documentation and you're like "what's XM" and Sitecore themselves aren't consistent.
+1. Terminology: this is really important because documentation from Sitecore themselves gets it messed up which is why I tried to hopefully explain it in a more meaningful way. Go ahead, go to Sitecore's site and try to figure it out. CM/CD are the authoring node and the delivery node. Only difference is configs same code base. I am not currently building CD but when I do it'll just be a multi-stage build where you have a base layer add the code and then a stage for CM pulling in CM transforms and CD pulling in CD transforms. Right now since i can see the site in CM and the only difference between CM and CD is that CD doesn't let you have authoring, I just use CM in development. This is technically known as "XM" which for whatever reason means standalone. It is important to know when you search or read documentation and you're like "what's XM" and Sitecore themselves aren't consistent.
 
 2. XC vs XP, again this gets confusing but there are real differences and you'll see it pop up. XP is CMS only mode meaning you don't run commerce (e.g., everything from plumber below is only XC). However in the build processs all servers in XC get extra assemblies and configs.
 
