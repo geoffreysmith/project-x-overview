@@ -11,6 +11,7 @@
         ACR URI       sitecore server sc version core/nano  kernel custom tag based off latest release (latest git tag, will not push to ACR without a tag)
 ```
 
+
 ##ACR URI
 
 This is process is all documented in the dev-ops repository, not really relevant but there were a lot of things that went into it and I basically used bash history to document it end to end.
